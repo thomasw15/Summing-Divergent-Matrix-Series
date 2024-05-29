@@ -10,10 +10,9 @@ cap = 5000;
 regular_list = zeros(cap,1);
 kahan_list = zeros(cap,1);
 
-R = rand(n);
-OneMat = ones(n);
-
-parfor k = 4950:cap
+parfor k = 1:cap
+    R = rand(n);
+    OneMat = ones(n);
     disp(k);    
     Target = (OneMat - R.^k)./(OneMat-R);
     
