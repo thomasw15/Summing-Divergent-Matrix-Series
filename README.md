@@ -20,4 +20,5 @@ Section 8.4:
 Section 8.5:
   recursive_compensated.m,
   recursive_compensated2.m,
-  recursive_compensated2_hadamard.m
+  recursive_compensated2_hadamard.m, 
+  recursive_compensated2_neumann.m
