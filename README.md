@@ -15,9 +15,13 @@ Section 8.3:
   accurate_eq.m
 
 Section 8.4:
-  dirichlet.m
+  pade-time.m
+  pade-binomial.m
 
 Section 8.5:
+  dirichlet.m
+
+Section 8.6:
   recursive_compensated.m,
   recursive_compensated2.m,
   recursive_compensated2_hadamard.m, 
