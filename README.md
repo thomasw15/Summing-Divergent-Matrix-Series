@@ -15,8 +15,8 @@ Section 8.3:
   accurate_eq.m
 
 Section 8.4:
-  pade-time.m
-  pade-binomial.m
+  pade_time.m,
+  pade_binomial.m
 
 Section 8.5:
   dirichlet.m
