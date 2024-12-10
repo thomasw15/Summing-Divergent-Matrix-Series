@@ -5,12 +5,8 @@ clc
 %Pade approximation of the binomial series
 
 d=10;
-converror = zeros(45,1);
 eulererror = zeros(45,1);
 Cerror = zeros(45,1);
-Ccond = zeros(45,1);
-convcond = zeros(45,1);
-eulercond = zeros(45,1);
 p = 100;
 alpha = -3/4;
 %alpha = 1/4;
@@ -26,13 +22,8 @@ m=15;
 n=m;
 
 for k= 1:300
-    disp(k);
-    error1 = zeros(10,1);
     error2 = zeros(10,1);
-    cond1 = zeros(10,1);
-    cond2 = zeros(10,1);
     errorC = zeros(10,1);
-    condC = zeros(10,1);
     for j = 1:10
         
         Y = randn(d);
@@ -91,18 +82,10 @@ for k= 1:300
                 Q = T2;
             end   
         end
-        cesaro = double(P*double(Q\eye(d)));
-        %errorC(j) = norm(cesaro-actual,2);
+        cesaro = double((Q'\P')');
         errorC(j) = norm(reshape(cesaro-actual,[],1),Inf);
-        condC(j) = cond(Q);
 
         %Euler sum
-        coef = alpha;
-        for i = 2:m+n+1
-            a(i) = double(coef); %This is binomial series (1+x)^alpha
-            coef = double(coef * (alpha-i+1)/i);
-        end
-        
         dE = zeros(m+n+1,1);
         cE = zeros(m+n+1,1);
         for i=1:m+n+1
@@ -144,14 +127,11 @@ for k= 1:300
                 Q = T2;
             end   
         end
-        euler = double(P*double(Q\eye(d)));
-        %error2(j) = norm(euler-actual,2);
+        euler = double((Q'\P')');
         error2(j) = norm(reshape(euler-actual,[],1),Inf);
-        cond2(j) = cond(Q);
     end
     eulererror(k) = mean(error2);
     Cerror(k) = mean(errorC);
-    convcond(k) = mean(cond1);
 end
 disp(eulererror);
 
