@@ -8,8 +8,8 @@ Section 8.1:
   gibbs_tridiagonal.m
 
 Section 8.2:
-  neumann_Borel.m,
-  neumann_eq.m
+  Neumann_Borel.m,
+  Neumann_eq.m
   
 Section 8.3:
   accurate_eq.m
